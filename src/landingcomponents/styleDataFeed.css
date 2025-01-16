@@ -1,0 +1,137 @@
+/* #DataFeedFrame 的主要樣式 */
+#DataFeedFrame {
+  width: 100vw;
+  margin-top: 6%;
+  margin-bottom: 6%;
+  border-radius: 0;
+
+  /* Fill - 線性漸變填充 */
+  background: linear-gradient(
+    to right,
+    #241f273c 0%,
+    #5543bb4c 50%,
+    #241f273c 100%
+  );
+  opacity: 1;
+
+  /* Stroke - 線性描邊 */
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-image-source: linear-gradient(
+    to right,
+    #31215e80 30%,
+    #603cffb9 50%,
+    #31215e80 70%
+  );
+  border-image-slice: 1;
+
+  /* Drop Shadow - 陰影效果 */
+  box-shadow: 0px 0px 100px rgba(36, 31, 39, 0.5);
+  transition: 0.5s ease-in-out;
+}
+
+/* Hover 時的霓虹燈效果 */
+#DataFeedFrame:hover {
+  box-shadow: 3px 3px 15px #66f;
+  animation: headerNeon ease-in-out 2.6s infinite;
+  transform: scale(1.02);
+  transition: 0.6s ease-in-out;
+}
+
+/* DataFeed 區塊的進場動畫 */
+.DataFeed {
+  width: 100vw;
+  padding: 20px;
+  max-width: 1100px;
+  margin: auto;
+  margin-top: 1%;
+  opacity: 1;
+  transform: translateY(60px);
+}
+
+.DataFeed.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 1.2s ease-in-out;
+}
+
+/* FeedWrap 的排列方式 */
+.FeedWrap {
+  display: flex;
+  gap: 20px;
+  min-height: 300px;
+  overflow: hidden;
+  transition: 0.5s ease-in-out;
+}
+
+/* DataFrame 的進場動畫 */
+.DataFrame {
+  width: 33.3%;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s ease-in-out;
+}
+
+.DataFrame.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.5s ease-in-out;
+}
+
+/* 文字樣式 */
+.fontStyle1 {
+  color: rgb(95, 61, 255);
+  width: 100%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 900;
+  font-family: "RNS Sanz";
+  margin-bottom: -3%;
+  text-shadow: 0px 0px 50px rgba(26, 10, 35, 0.1);
+}
+
+.fontStyle2 {
+  color: #ffffff;
+  width: 40%;
+  text-align: center;
+  line-height: 150px;
+  margin-left: -2%;
+  font-size: 50px;
+  font-weight: 900;
+  font-family: "RNS Sanz";
+  display: inline-block;
+  text-shadow: 0px 0px 50px rgba(26, 10, 35, 0.1);
+}
+
+/* 插圖的樣式 */
+.stat-icon {
+  width: 150px;
+  height: 150px;
+  margin-left: 7%;
+  margin-top: -7%;
+  transition: 1s ease-out;
+}
+
+.stat-icon.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 霓虹燈的動畫效果 */
+@keyframes headerNeon {
+  0% {
+    box-shadow: 3px 2px 20px rgba(245, 132, 132, 0.3);
+  }
+  25% {
+    box-shadow: 3px -2px 20px rgba(248, 202, 74, 0.3);
+  }
+  50% {
+    box-shadow: -3px -2px 20px rgba(177, 255, 132, 0.3);
+  }
+  75% {
+    box-shadow: -3px 2px 20px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    box-shadow: 3px 2px 20px rgba(59, 78, 250, 0.3);
+  }
+}
